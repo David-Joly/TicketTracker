@@ -42,5 +42,30 @@ namespace TicketTracker
         {
             OpenChildForm(new ContactUs());
         }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void createTicketButton_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new TicketCreation());
+        }
+
+        private void closedTickButton_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new ClosedTickets());
+        }
+
+        private void yourTicketsButton_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new YourTickets());
+        }
+
+        private void dashboardButton_Click(object sender, EventArgs e)
+        {
+            currentChildForm.Close();
+        }
     }
 }

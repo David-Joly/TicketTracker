@@ -40,9 +40,20 @@ namespace TicketTracker
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.borderPanel = new System.Windows.Forms.Panel();
             this.desktopPanel = new System.Windows.Forms.Panel();
+            this.statsLabel = new System.Windows.Forms.Label();
+            this.statsPanel = new System.Windows.Forms.Panel();
+            this.commentsMadeLabel = new System.Windows.Forms.Label();
+            this.completedTickLabel = new System.Windows.Forms.Label();
+            this.openTicketLabel = new System.Windows.Forms.Label();
+            this.monthCalendar = new System.Windows.Forms.MonthCalendar();
+            this.ticketGridView = new System.Windows.Forms.DataGridView();
+            this.exitButton = new System.Windows.Forms.Button();
             this.dashPanel.SuspendLayout();
             this.topDashPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.desktopPanel.SuspendLayout();
+            this.statsPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // dashPanel
@@ -94,6 +105,7 @@ namespace TicketTracker
             this.closedTickButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.closedTickButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.closedTickButton.UseVisualStyleBackColor = true;
+            this.closedTickButton.Click += new System.EventHandler(this.closedTickButton_Click);
             // 
             // usersButton
             // 
@@ -127,6 +139,7 @@ namespace TicketTracker
             this.createTicketButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.createTicketButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.createTicketButton.UseVisualStyleBackColor = true;
+            this.createTicketButton.Click += new System.EventHandler(this.createTicketButton_Click);
             // 
             // yourTicketsButton
             // 
@@ -144,6 +157,7 @@ namespace TicketTracker
             this.yourTicketsButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.yourTicketsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.yourTicketsButton.UseVisualStyleBackColor = true;
+            this.yourTicketsButton.Click += new System.EventHandler(this.yourTicketsButton_Click);
             // 
             // dashboardButton
             // 
@@ -161,6 +175,7 @@ namespace TicketTracker
             this.dashboardButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.dashboardButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.dashboardButton.UseVisualStyleBackColor = true;
+            this.dashboardButton.Click += new System.EventHandler(this.dashboardButton_Click);
             // 
             // topDashPanel
             // 
@@ -193,11 +208,99 @@ namespace TicketTracker
             // desktopPanel
             // 
             this.desktopPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
+            this.desktopPanel.Controls.Add(this.statsLabel);
+            this.desktopPanel.Controls.Add(this.statsPanel);
+            this.desktopPanel.Controls.Add(this.monthCalendar);
+            this.desktopPanel.Controls.Add(this.ticketGridView);
+            this.desktopPanel.Controls.Add(this.exitButton);
             this.desktopPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.desktopPanel.Location = new System.Drawing.Point(171, 10);
             this.desktopPanel.Name = "desktopPanel";
             this.desktopPanel.Size = new System.Drawing.Size(840, 560);
             this.desktopPanel.TabIndex = 2;
+            // 
+            // statsLabel
+            // 
+            this.statsLabel.AutoSize = true;
+            this.statsLabel.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.statsLabel.ForeColor = System.Drawing.Color.White;
+            this.statsLabel.Location = new System.Drawing.Point(151, 99);
+            this.statsLabel.Name = "statsLabel";
+            this.statsLabel.Size = new System.Drawing.Size(89, 21);
+            this.statsLabel.TabIndex = 7;
+            this.statsLabel.Text = "Your Stats ";
+            // 
+            // statsPanel
+            // 
+            this.statsPanel.BackColor = System.Drawing.Color.White;
+            this.statsPanel.Controls.Add(this.commentsMadeLabel);
+            this.statsPanel.Controls.Add(this.completedTickLabel);
+            this.statsPanel.Controls.Add(this.openTicketLabel);
+            this.statsPanel.Location = new System.Drawing.Point(98, 131);
+            this.statsPanel.Name = "statsPanel";
+            this.statsPanel.Size = new System.Drawing.Size(208, 162);
+            this.statsPanel.TabIndex = 6;
+            // 
+            // commentsMadeLabel
+            // 
+            this.commentsMadeLabel.AutoSize = true;
+            this.commentsMadeLabel.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.commentsMadeLabel.Location = new System.Drawing.Point(14, 109);
+            this.commentsMadeLabel.Name = "commentsMadeLabel";
+            this.commentsMadeLabel.Size = new System.Drawing.Size(120, 17);
+            this.commentsMadeLabel.TabIndex = 0;
+            this.commentsMadeLabel.Text = "Comments Made: ";
+            // 
+            // completedTickLabel
+            // 
+            this.completedTickLabel.AutoSize = true;
+            this.completedTickLabel.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.completedTickLabel.Location = new System.Drawing.Point(12, 67);
+            this.completedTickLabel.Name = "completedTickLabel";
+            this.completedTickLabel.Size = new System.Drawing.Size(130, 17);
+            this.completedTickLabel.TabIndex = 0;
+            this.completedTickLabel.Text = "Completed Tickets: ";
+            // 
+            // openTicketLabel
+            // 
+            this.openTicketLabel.AutoSize = true;
+            this.openTicketLabel.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.openTicketLabel.Location = new System.Drawing.Point(12, 25);
+            this.openTicketLabel.Name = "openTicketLabel";
+            this.openTicketLabel.Size = new System.Drawing.Size(96, 17);
+            this.openTicketLabel.TabIndex = 0;
+            this.openTicketLabel.Text = "Open Tickets: ";
+            // 
+            // monthCalendar
+            // 
+            this.monthCalendar.BackColor = System.Drawing.Color.White;
+            this.monthCalendar.Location = new System.Drawing.Point(454, 131);
+            this.monthCalendar.Name = "monthCalendar";
+            this.monthCalendar.TabIndex = 5;
+            // 
+            // ticketGridView
+            // 
+            this.ticketGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
+            this.ticketGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ticketGridView.Location = new System.Drawing.Point(56, 381);
+            this.ticketGridView.Name = "ticketGridView";
+            this.ticketGridView.RowTemplate.Height = 25;
+            this.ticketGridView.Size = new System.Drawing.Size(724, 150);
+            this.ticketGridView.TabIndex = 4;
+            // 
+            // exitButton
+            // 
+            this.exitButton.FlatAppearance.BorderSize = 0;
+            this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exitButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.exitButton.ForeColor = System.Drawing.Color.White;
+            this.exitButton.Location = new System.Drawing.Point(794, 6);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(34, 33);
+            this.exitButton.TabIndex = 3;
+            this.exitButton.Text = "X";
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // Dashboard
             // 
@@ -208,12 +311,18 @@ namespace TicketTracker
             this.Controls.Add(this.desktopPanel);
             this.Controls.Add(this.borderPanel);
             this.Controls.Add(this.dashPanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
             this.dashPanel.ResumeLayout(false);
             this.topDashPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.desktopPanel.ResumeLayout(false);
+            this.desktopPanel.PerformLayout();
+            this.statsPanel.ResumeLayout(false);
+            this.statsPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ticketGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -231,6 +340,14 @@ namespace TicketTracker
         private System.Windows.Forms.Button dashboardButton;
         private System.Windows.Forms.Panel borderPanel;
         private System.Windows.Forms.Panel desktopPanel;
+        private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.Label statsLabel;
+        private System.Windows.Forms.Panel statsPanel;
+        private System.Windows.Forms.Label commentsMadeLabel;
+        private System.Windows.Forms.Label completedTickLabel;
+        private System.Windows.Forms.Label openTicketLabel;
+        private System.Windows.Forms.MonthCalendar monthCalendar;
+        private System.Windows.Forms.DataGridView ticketGridView;
     }
 }
 
