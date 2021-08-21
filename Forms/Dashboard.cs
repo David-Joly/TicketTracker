@@ -15,6 +15,7 @@ namespace TicketTracker
     public partial class Dashboard : Form
     {
         private Form currentChildForm;
+        private Button currentButton;
         public Dashboard()
         {
             InitializeComponent();
@@ -40,6 +41,7 @@ namespace TicketTracker
 
         private void ContactUs_Click(object sender, EventArgs e)
         {
+            SelectedButton(sender, Colours.clickedColour);
             OpenChildForm(new ContactUs());
         }
 
@@ -50,22 +52,67 @@ namespace TicketTracker
 
         private void createTicketButton_Click(object sender, EventArgs e)
         {
+            SelectedButton(sender, Colours.clickedColour);
             OpenChildForm(new TicketCreation());
         }
 
         private void closedTickButton_Click(object sender, EventArgs e)
         {
+            SelectedButton(sender, Colours.clickedColour);
             OpenChildForm(new ClosedTickets());
         }
 
         private void yourTicketsButton_Click(object sender, EventArgs e)
         {
+            SelectedButton(sender, Colours.clickedColour);
             OpenChildForm(new YourTickets());
         }
 
         private void dashboardButton_Click(object sender, EventArgs e)
         {
-            currentChildForm.Close();
+            SelectedButton(sender, Colours.clickedColour);
+            if (currentChildForm != null)
+            {
+                currentChildForm.Close();
+            }
+            else
+            {
+                this.Refresh();
+            }
+        }
+
+        private void usersButton_Click(object sender, EventArgs e)
+        {
+            SelectedButton(sender, Colours.clickedColour);
+            OpenChildForm(new People());
+        }
+
+        private void ResetButton()
+        {
+            if (currentButton != null)
+            {
+                currentButton.ForeColor = Colours.defaultColour;
+            }
+
+        }
+        private void SelectedButton(object senderBtn, Color colour)
+        {
+            if (senderBtn != null)
+            {
+                ResetButton();
+                currentButton = (Button)senderBtn;
+                currentButton.ForeColor = colour;
+            }
+        }
+        private struct Colours
+        {
+            public static Color defaultColour = Color.FromArgb(47, 72, 88);
+            public static Color clickedColour = Color.FromArgb(53, 208, 186);
         }
     }
 }
+       
+  
+
+
+

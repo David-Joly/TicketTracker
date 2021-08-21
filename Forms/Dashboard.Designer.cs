@@ -122,6 +122,7 @@ namespace TicketTracker
             this.usersButton.Text = "Users        ";
             this.usersButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.usersButton.UseVisualStyleBackColor = true;
+            this.usersButton.Click += new System.EventHandler(this.usersButton_Click);
             // 
             // createTicketButton
             // 
