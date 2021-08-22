@@ -20,6 +20,7 @@ namespace TicketTracker.Forms
         connection_class con = new connection_class();
         public TicketComments()
         {
+            this.Icon = Properties.Resources.ticket_4271;
             InitializeComponent();
         }
 

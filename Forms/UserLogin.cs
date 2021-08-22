@@ -19,10 +19,11 @@ namespace TicketTracker.Forms
         
         public UserLogin()
         {
+            this.Icon = Properties.Resources.ticket_4271;
             InitializeComponent();
         }
-
-        private void backButton_Click(object sender, EventArgs e)
+        
+        private void backButton_Click(object sender, EventArgs e) // Will bring user back to account creation page if back button is clicked
         {
             AccountCreation createAccount = new AccountCreation();
             this.Hide();
@@ -55,14 +56,14 @@ namespace TicketTracker.Forms
             adapter.Fill(dt);
             i = Convert.ToInt32(dt.Rows.Count.ToString());
 
-            if (i == 0)
+            if (i == 0) // If either username or password are not present in users table the user will receive a message and they will not be logged in
             {
                 MessageBox.Show("You have entered an invalid username or password, please try again.");
             }
-            else
+            else // If login is successful the user will continue to the dashboard form
             {
                 this.Hide();
-                Dashboard dashboard = new Dashboard(usernameBox.Text);
+                Dashboard dashboard = new Dashboard(usernameBox.Text); // Passing current username to the dashboard form
                 dashboard.Show();
             }
             con.connectdb.Close();

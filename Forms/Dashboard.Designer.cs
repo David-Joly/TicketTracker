@@ -50,6 +50,7 @@ namespace TicketTracker
             this.monthCalendar = new System.Windows.Forms.MonthCalendar();
             this.ticketGridView = new System.Windows.Forms.DataGridView();
             this.exitButton = new System.Windows.Forms.Button();
+            this.minimizeButton = new System.Windows.Forms.Button();
             this.dashPanel.SuspendLayout();
             this.topDashPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -211,6 +212,7 @@ namespace TicketTracker
             // desktopPanel
             // 
             this.desktopPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
+            this.desktopPanel.Controls.Add(this.minimizeButton);
             this.desktopPanel.Controls.Add(this.userLabel);
             this.desktopPanel.Controls.Add(this.welcomeLabel);
             this.desktopPanel.Controls.Add(this.statsLabel);
@@ -330,6 +332,20 @@ namespace TicketTracker
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
+            // minimizeButton
+            // 
+            this.minimizeButton.FlatAppearance.BorderSize = 0;
+            this.minimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.minimizeButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.minimizeButton.ForeColor = System.Drawing.Color.White;
+            this.minimizeButton.Image = global::TicketTracker.Properties.Resources.remove1;
+            this.minimizeButton.Location = new System.Drawing.Point(756, 9);
+            this.minimizeButton.Name = "minimizeButton";
+            this.minimizeButton.Size = new System.Drawing.Size(32, 26);
+            this.minimizeButton.TabIndex = 1;
+            this.minimizeButton.UseVisualStyleBackColor = true;
+            this.minimizeButton.Click += new System.EventHandler(this.minimizeButton_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -379,6 +395,7 @@ namespace TicketTracker
         private System.Windows.Forms.DataGridView ticketGridView;
         private System.Windows.Forms.Label userLabel;
         private System.Windows.Forms.Label welcomeLabel;
+        private System.Windows.Forms.Button minimizeButton;
     }
 }
 

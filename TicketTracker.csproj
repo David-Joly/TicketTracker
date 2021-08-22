@@ -4,6 +4,7 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon>Resources\ticket_4271.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>

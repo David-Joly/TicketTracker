@@ -51,7 +51,7 @@ namespace TicketTracker.Forms
             // 
             this.logoPicture.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.logoPicture.Image = global::TicketTracker.Properties.Resources.bugslogo;
-            this.logoPicture.Location = new System.Drawing.Point(38, 24);
+            this.logoPicture.Location = new System.Drawing.Point(34, 24);
             this.logoPicture.Name = "logoPicture";
             this.logoPicture.Size = new System.Drawing.Size(167, 58);
             this.logoPicture.TabIndex = 0;
@@ -168,7 +168,7 @@ namespace TicketTracker.Forms
             // 
             this.createAccountButton.BackColor = System.Drawing.Color.White;
             this.createAccountButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.createAccountButton.Location = new System.Drawing.Point(60, 419);
+            this.createAccountButton.Location = new System.Drawing.Point(62, 417);
             this.createAccountButton.Name = "createAccountButton";
             this.createAccountButton.Size = new System.Drawing.Size(114, 23);
             this.createAccountButton.TabIndex = 4;
@@ -209,7 +209,7 @@ namespace TicketTracker.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
-            this.ClientSize = new System.Drawing.Size(250, 500);
+            this.ClientSize = new System.Drawing.Size(243, 500);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.userLoginLink);
             this.Controls.Add(this.createAccountButton);

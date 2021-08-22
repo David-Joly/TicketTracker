@@ -14,10 +14,11 @@ using TicketTracker.Classes;
 namespace TicketTracker.Forms
 {
     public partial class AccountCreation : Form
-    {
+    {   // Connection class opened
         connection_class con = new connection_class();
         public AccountCreation()
-        {
+        {   // Adding icon to application
+            this.Icon = Properties.Resources.ticket_4271;
             InitializeComponent();
         }
 
@@ -51,7 +52,7 @@ namespace TicketTracker.Forms
 
             newUser.Role = roleBox.Text;
             string role = newUser.Role;
-
+            // Preventing the user from leaving empty fields
             if (name == "")
             {
                 MessageBox.Show("You must enter a name.");
@@ -81,13 +82,14 @@ namespace TicketTracker.Forms
                 MySqlDataAdapter adapter = new MySqlDataAdapter(com);
                 adapter.Fill(ds);
 
-                int i = ds.Tables[0].Rows.Count;
+                // Checking users table to see if username already exists
+                int i = ds.Tables[0].Rows.Count; 
                 if (i > 0)
                 {
                     MessageBox.Show("Username already exists. Please try again.");
                     usernameBox.Clear();
                 } else
-                {
+                { // If username does not exist, account will be created with the fields that user has input
                     CreateUser(name, user, pass, role, email);
                     ClearTextBoxes();
                     MessageBox.Show("Account created!");
@@ -110,6 +112,7 @@ namespace TicketTracker.Forms
 
             return com.ExecuteNonQuery();
         } 
+        // Clears textboxes after account has been created
         public void ClearTextBoxes()
         {
             nameBox.Clear();

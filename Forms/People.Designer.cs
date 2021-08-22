@@ -42,7 +42,7 @@ namespace TicketTracker.Forms
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
-            this.peopleView.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.peopleView.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.peopleView.FullRowSelect = true;
             this.peopleView.GridLines = true;
             this.peopleView.HideSelection = false;
