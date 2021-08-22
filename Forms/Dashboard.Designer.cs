@@ -40,6 +40,8 @@ namespace TicketTracker
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.borderPanel = new System.Windows.Forms.Panel();
             this.desktopPanel = new System.Windows.Forms.Panel();
+            this.userLabel = new System.Windows.Forms.Label();
+            this.welcomeLabel = new System.Windows.Forms.Label();
             this.statsLabel = new System.Windows.Forms.Label();
             this.statsPanel = new System.Windows.Forms.Panel();
             this.commentsMadeLabel = new System.Windows.Forms.Label();
@@ -209,6 +211,8 @@ namespace TicketTracker
             // desktopPanel
             // 
             this.desktopPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
+            this.desktopPanel.Controls.Add(this.userLabel);
+            this.desktopPanel.Controls.Add(this.welcomeLabel);
             this.desktopPanel.Controls.Add(this.statsLabel);
             this.desktopPanel.Controls.Add(this.statsPanel);
             this.desktopPanel.Controls.Add(this.monthCalendar);
@@ -220,12 +224,34 @@ namespace TicketTracker
             this.desktopPanel.Size = new System.Drawing.Size(840, 560);
             this.desktopPanel.TabIndex = 2;
             // 
+            // userLabel
+            // 
+            this.userLabel.AutoSize = true;
+            this.userLabel.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.userLabel.ForeColor = System.Drawing.Color.White;
+            this.userLabel.Location = new System.Drawing.Point(41, 68);
+            this.userLabel.Name = "userLabel";
+            this.userLabel.Size = new System.Drawing.Size(44, 21);
+            this.userLabel.TabIndex = 8;
+            this.userLabel.Text = "User";
+            // 
+            // welcomeLabel
+            // 
+            this.welcomeLabel.AutoSize = true;
+            this.welcomeLabel.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.welcomeLabel.ForeColor = System.Drawing.Color.White;
+            this.welcomeLabel.Location = new System.Drawing.Point(25, 47);
+            this.welcomeLabel.Name = "welcomeLabel";
+            this.welcomeLabel.Size = new System.Drawing.Size(86, 21);
+            this.welcomeLabel.TabIndex = 1;
+            this.welcomeLabel.Text = "Welcome,";
+            // 
             // statsLabel
             // 
             this.statsLabel.AutoSize = true;
             this.statsLabel.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.statsLabel.ForeColor = System.Drawing.Color.White;
-            this.statsLabel.Location = new System.Drawing.Point(151, 99);
+            this.statsLabel.Location = new System.Drawing.Point(155, 99);
             this.statsLabel.Name = "statsLabel";
             this.statsLabel.Size = new System.Drawing.Size(89, 21);
             this.statsLabel.TabIndex = 7;
@@ -237,7 +263,7 @@ namespace TicketTracker
             this.statsPanel.Controls.Add(this.commentsMadeLabel);
             this.statsPanel.Controls.Add(this.completedTickLabel);
             this.statsPanel.Controls.Add(this.openTicketLabel);
-            this.statsPanel.Location = new System.Drawing.Point(98, 131);
+            this.statsPanel.Location = new System.Drawing.Point(102, 137);
             this.statsPanel.Name = "statsPanel";
             this.statsPanel.Size = new System.Drawing.Size(208, 162);
             this.statsPanel.TabIndex = 6;
@@ -283,10 +309,10 @@ namespace TicketTracker
             // 
             this.ticketGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
             this.ticketGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ticketGridView.Location = new System.Drawing.Point(56, 381);
+            this.ticketGridView.Location = new System.Drawing.Point(102, 361);
             this.ticketGridView.Name = "ticketGridView";
             this.ticketGridView.RowTemplate.Height = 25;
-            this.ticketGridView.Size = new System.Drawing.Size(724, 150);
+            this.ticketGridView.Size = new System.Drawing.Size(600, 187);
             this.ticketGridView.TabIndex = 4;
             // 
             // exitButton
@@ -316,6 +342,7 @@ namespace TicketTracker
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
+            this.Load += new System.EventHandler(this.Dashboard_Load);
             this.dashPanel.ResumeLayout(false);
             this.topDashPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -349,6 +376,8 @@ namespace TicketTracker
         private System.Windows.Forms.Label openTicketLabel;
         private System.Windows.Forms.MonthCalendar monthCalendar;
         private System.Windows.Forms.DataGridView ticketGridView;
+        private System.Windows.Forms.Label userLabel;
+        private System.Windows.Forms.Label welcomeLabel;
     }
 }
 

@@ -29,29 +29,29 @@ namespace TicketTracker.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.userTicketView = new System.Windows.Forms.DataGridView();
             this.ticketIDLabel = new System.Windows.Forms.Label();
             this.closeBox = new System.Windows.Forms.TextBox();
-            this.closeTicketButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.closeButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.userTicketView)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // userTicketView
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(40, 56);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(724, 218);
-            this.dataGridView1.TabIndex = 0;
+            this.userTicketView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
+            this.userTicketView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.userTicketView.Location = new System.Drawing.Point(40, 56);
+            this.userTicketView.Name = "userTicketView";
+            this.userTicketView.RowTemplate.Height = 25;
+            this.userTicketView.Size = new System.Drawing.Size(600, 218);
+            this.userTicketView.TabIndex = 0;
             // 
             // ticketIDLabel
             // 
             this.ticketIDLabel.AutoSize = true;
             this.ticketIDLabel.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ticketIDLabel.ForeColor = System.Drawing.Color.White;
-            this.ticketIDLabel.Location = new System.Drawing.Point(267, 298);
+            this.ticketIDLabel.Location = new System.Drawing.Point(219, 298);
             this.ticketIDLabel.Name = "ticketIDLabel";
             this.ticketIDLabel.Size = new System.Drawing.Size(99, 17);
             this.ticketIDLabel.TabIndex = 1;
@@ -59,21 +59,22 @@ namespace TicketTracker.Forms
             // 
             // closeBox
             // 
-            this.closeBox.Location = new System.Drawing.Point(372, 297);
+            this.closeBox.Location = new System.Drawing.Point(324, 297);
             this.closeBox.Name = "closeBox";
             this.closeBox.Size = new System.Drawing.Size(141, 23);
             this.closeBox.TabIndex = 2;
             // 
-            // closeTicketButton
+            // closeButton
             // 
-            this.closeTicketButton.BackColor = System.Drawing.Color.White;
-            this.closeTicketButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeTicketButton.Location = new System.Drawing.Point(334, 343);
-            this.closeTicketButton.Name = "closeTicketButton";
-            this.closeTicketButton.Size = new System.Drawing.Size(106, 23);
-            this.closeTicketButton.TabIndex = 3;
-            this.closeTicketButton.Text = "Close Ticket";
-            this.closeTicketButton.UseVisualStyleBackColor = false;
+            this.closeButton.BackColor = System.Drawing.Color.White;
+            this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeButton.Location = new System.Drawing.Point(281, 346);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(106, 23);
+            this.closeButton.TabIndex = 3;
+            this.closeButton.Text = "Close Ticket";
+            this.closeButton.UseVisualStyleBackColor = false;
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
             // YourTickets
             // 
@@ -81,13 +82,14 @@ namespace TicketTracker.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
             this.ClientSize = new System.Drawing.Size(783, 394);
-            this.Controls.Add(this.closeTicketButton);
+            this.Controls.Add(this.closeButton);
             this.Controls.Add(this.closeBox);
             this.Controls.Add(this.ticketIDLabel);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.userTicketView);
             this.Name = "YourTickets";
             this.Text = "YourTickets";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.YourTickets_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.userTicketView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -95,9 +97,9 @@ namespace TicketTracker.Forms
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView userTicketView;
         private System.Windows.Forms.Label ticketIDLabel;
         private System.Windows.Forms.TextBox closeBox;
-        private System.Windows.Forms.Button closeTicketButton;
+        private System.Windows.Forms.Button closeButton;
     }
 }

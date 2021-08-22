@@ -85,6 +85,7 @@ namespace TicketTracker.Forms
             this.mailButton.TabIndex = 3;
             this.mailButton.Text = "Send";
             this.mailButton.UseVisualStyleBackColor = false;
+            this.mailButton.Click += new System.EventHandler(this.mailButton_Click);
             // 
             // ContactUs
             // 

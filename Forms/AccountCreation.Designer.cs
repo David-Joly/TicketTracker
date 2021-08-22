@@ -174,6 +174,7 @@ namespace TicketTracker.Forms
             this.createAccountButton.TabIndex = 4;
             this.createAccountButton.Text = "Create Account";
             this.createAccountButton.UseVisualStyleBackColor = false;
+            this.createAccountButton.Click += new System.EventHandler(this.createAccountButton_Click);
             // 
             // userLoginLink
             // 
@@ -186,6 +187,7 @@ namespace TicketTracker.Forms
             this.userLoginLink.TabStop = true;
             this.userLoginLink.Text = "Already have an account? Click here!";
             this.userLoginLink.VisitedLinkColor = System.Drawing.Color.White;
+            this.userLoginLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.userLoginLink_LinkClicked);
             // 
             // closeButton
             // 

@@ -89,6 +89,7 @@ namespace TicketTracker.Forms
             this.createTicketButton.TabIndex = 3;
             this.createTicketButton.Text = "Submit Ticket";
             this.createTicketButton.UseVisualStyleBackColor = false;
+            this.createTicketButton.Click += new System.EventHandler(this.createTicketButton_Click);
             // 
             // TicketCreation
             // 

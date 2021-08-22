@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace TicketTracker.Forms
 {
     partial class UserLogin
@@ -36,7 +38,7 @@ namespace TicketTracker.Forms
             this.passwordLabel = new System.Windows.Forms.Label();
             this.usernameBox = new System.Windows.Forms.TextBox();
             this.passwordBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.loginButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.logoPicture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +51,7 @@ namespace TicketTracker.Forms
             this.backButton.Image = global::TicketTracker.Properties.Resources.arrow_back;
             this.backButton.Location = new System.Drawing.Point(0, 1);
             this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(34, 33);
+            this.backButton.Size = new System.Drawing.Size(33, 33);
             this.backButton.TabIndex = 0;
             this.backButton.UseVisualStyleBackColor = true;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
@@ -57,7 +59,7 @@ namespace TicketTracker.Forms
             // logoPicture
             // 
             this.logoPicture.Image = global::TicketTracker.Properties.Resources.bugslogo;
-            this.logoPicture.Location = new System.Drawing.Point(30, 28);
+            this.logoPicture.Location = new System.Drawing.Point(30, 40);
             this.logoPicture.Name = "logoPicture";
             this.logoPicture.Size = new System.Drawing.Size(167, 58);
             this.logoPicture.TabIndex = 1;
@@ -111,16 +113,17 @@ namespace TicketTracker.Forms
             this.passwordBox.TabIndex = 4;
             this.passwordBox.UseSystemPasswordChar = true;
             // 
-            // button1
+            // loginButton
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(67, 250);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 26);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Log in";
-            this.button1.UseVisualStyleBackColor = false;
+            this.loginButton.BackColor = System.Drawing.Color.White;
+            this.loginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loginButton.Location = new System.Drawing.Point(67, 250);
+            this.loginButton.Name = "loginButton";
+            this.loginButton.Size = new System.Drawing.Size(91, 26);
+            this.loginButton.TabIndex = 5;
+            this.loginButton.Text = "Log in";
+            this.loginButton.UseVisualStyleBackColor = false;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // UserLogin
             // 
@@ -128,7 +131,7 @@ namespace TicketTracker.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
             this.ClientSize = new System.Drawing.Size(227, 298);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.loginButton);
             this.Controls.Add(this.passwordBox);
             this.Controls.Add(this.usernameBox);
             this.Controls.Add(this.passwordLabel);
@@ -146,6 +149,7 @@ namespace TicketTracker.Forms
 
         }
 
+       
         #endregion
 
         private System.Windows.Forms.Button backButton;
@@ -155,6 +159,6 @@ namespace TicketTracker.Forms
         private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.TextBox usernameBox;
         private System.Windows.Forms.TextBox passwordBox;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button loginButton;
     }
 }

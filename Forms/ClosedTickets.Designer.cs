@@ -29,19 +29,19 @@ namespace TicketTracker.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.ClosedTicketView = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.ClosedTicketView)).BeginInit();
+            this.closedTicketView = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.closedTicketView)).BeginInit();
             this.SuspendLayout();
             // 
-            // ClosedTicketView
+            // closedTicketView
             // 
-            this.ClosedTicketView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
-            this.ClosedTicketView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ClosedTicketView.Location = new System.Drawing.Point(56, 56);
-            this.ClosedTicketView.Name = "ClosedTicketView";
-            this.ClosedTicketView.RowTemplate.Height = 25;
-            this.ClosedTicketView.Size = new System.Drawing.Size(724, 218);
-            this.ClosedTicketView.TabIndex = 0;
+            this.closedTicketView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
+            this.closedTicketView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.closedTicketView.Location = new System.Drawing.Point(56, 56);
+            this.closedTicketView.Name = "closedTicketView";
+            this.closedTicketView.RowTemplate.Height = 25;
+            this.closedTicketView.Size = new System.Drawing.Size(600, 218);
+            this.closedTicketView.TabIndex = 0;
             // 
             // ClosedTickets
             // 
@@ -49,16 +49,17 @@ namespace TicketTracker.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
             this.ClientSize = new System.Drawing.Size(809, 318);
-            this.Controls.Add(this.ClosedTicketView);
+            this.Controls.Add(this.closedTicketView);
             this.Name = "ClosedTickets";
             this.Text = "ClosedTickets";
-            ((System.ComponentModel.ISupportInitialize)(this.ClosedTicketView)).EndInit();
+            this.Load += new System.EventHandler(this.ClosedTickets_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.closedTicketView)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView ClosedTicketView;
+        private System.Windows.Forms.DataGridView closedTicketView;
     }
 }
