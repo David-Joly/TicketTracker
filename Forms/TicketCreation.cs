@@ -51,6 +51,7 @@ namespace TicketTracker.Forms
             {
                 CreateTicket(issue, priority, status, creator);
                 con.connectdb.Close();
+                issueBox.Clear();
                 MessageBox.Show("Ticket created!");
 
             }

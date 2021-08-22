@@ -198,6 +198,18 @@ namespace TicketTracker
             ticketGridView.DataSource = bSource;
             this.ticketGridView.AutoGenerateColumns = false;
         }
+
+        private void ticketGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string user = userLabel.Text;
+            int ticketID = Convert.ToInt32(ticketGridView.CurrentRow.Cells[0].Value);
+
+            TicketComments commentPage = new TicketComments();
+            commentPage.CurrentUser = user;
+            commentPage.TicketIdentification = ticketID;
+            commentPage.Show();
+
+        }
     }
 }
 

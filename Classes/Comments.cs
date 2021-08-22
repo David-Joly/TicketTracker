@@ -10,7 +10,6 @@ namespace TicketTracker.Classes
     {
         public string Comment { get; set; }
         public string Creator { get; set; }
-        public DateTime date { get; set; }
         public int TicketID { get; set; }
     }
 }

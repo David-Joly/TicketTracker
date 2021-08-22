@@ -40,18 +40,19 @@ namespace TicketTracker.Forms
             // 
             this.userTicketView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
             this.userTicketView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.userTicketView.Location = new System.Drawing.Point(40, 56);
+            this.userTicketView.Location = new System.Drawing.Point(102, 56);
             this.userTicketView.Name = "userTicketView";
             this.userTicketView.RowTemplate.Height = 25;
             this.userTicketView.Size = new System.Drawing.Size(600, 218);
             this.userTicketView.TabIndex = 0;
+            this.userTicketView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.userTicketView_CellContentClick);
             // 
             // ticketIDLabel
             // 
             this.ticketIDLabel.AutoSize = true;
             this.ticketIDLabel.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ticketIDLabel.ForeColor = System.Drawing.Color.White;
-            this.ticketIDLabel.Location = new System.Drawing.Point(219, 298);
+            this.ticketIDLabel.Location = new System.Drawing.Point(232, 293);
             this.ticketIDLabel.Name = "ticketIDLabel";
             this.ticketIDLabel.Size = new System.Drawing.Size(99, 17);
             this.ticketIDLabel.TabIndex = 1;
@@ -59,7 +60,7 @@ namespace TicketTracker.Forms
             // 
             // closeBox
             // 
-            this.closeBox.Location = new System.Drawing.Point(324, 297);
+            this.closeBox.Location = new System.Drawing.Point(337, 292);
             this.closeBox.Name = "closeBox";
             this.closeBox.Size = new System.Drawing.Size(141, 23);
             this.closeBox.TabIndex = 2;
@@ -68,7 +69,7 @@ namespace TicketTracker.Forms
             // 
             this.closeButton.BackColor = System.Drawing.Color.White;
             this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeButton.Location = new System.Drawing.Point(281, 346);
+            this.closeButton.Location = new System.Drawing.Point(359, 343);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(106, 23);
             this.closeButton.TabIndex = 3;

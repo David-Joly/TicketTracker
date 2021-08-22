@@ -178,6 +178,7 @@ namespace TicketTracker.Forms
             // 
             // userLoginLink
             // 
+            this.userLoginLink.ActiveLinkColor = System.Drawing.Color.White;
             this.userLoginLink.AutoSize = true;
             this.userLoginLink.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(208)))), ((int)(((byte)(186)))));
             this.userLoginLink.Location = new System.Drawing.Point(23, 457);

@@ -56,15 +56,7 @@ namespace TicketTracker.Forms
             createComment.Name = "View";
             createComment.Text = "View";
             createComment.UseColumnTextForLinkValue = true;
-        //}
-
-        //private void closedTicketView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    int ticketID = Convert.ToInt32(closedTicketView.CurrentRow.Cells[0].Value);
-
-        //    Comments commentPage = new Comments();
-        //    commentPage.TicketIdentification = ticketID;
-        //    commentPage.Show();
+       
         }
     }
 }

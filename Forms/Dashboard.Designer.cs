@@ -314,6 +314,7 @@ namespace TicketTracker
             this.ticketGridView.RowTemplate.Height = 25;
             this.ticketGridView.Size = new System.Drawing.Size(600, 187);
             this.ticketGridView.TabIndex = 4;
+            this.ticketGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ticketGridView_CellContentClick);
             // 
             // exitButton
             // 

@@ -37,13 +37,16 @@ namespace TicketTracker.Forms
             // 
             // peopleView
             // 
+            this.peopleView.BackColor = System.Drawing.Color.White;
             this.peopleView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
             this.peopleView.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.peopleView.FullRowSelect = true;
+            this.peopleView.GridLines = true;
             this.peopleView.HideSelection = false;
-            this.peopleView.Location = new System.Drawing.Point(233, 71);
+            this.peopleView.Location = new System.Drawing.Point(235, 109);
             this.peopleView.Name = "peopleView";
             this.peopleView.Size = new System.Drawing.Size(391, 367);
             this.peopleView.TabIndex = 0;
@@ -70,7 +73,7 @@ namespace TicketTracker.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 559);
             this.Controls.Add(this.peopleView);
             this.Name = "People";
             this.Text = "People";

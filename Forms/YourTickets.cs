@@ -90,6 +90,15 @@ namespace TicketTracker.Forms
             userTicketView.RowHeadersVisible = false;
             GetYourTickets();
         }
+
+        private void userTicketView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int ticketID = Convert.ToInt32(userTicketView.CurrentRow.Cells[0].Value);
+            TicketComments comments = new TicketComments();
+            comments.CurrentUser = CurrentUser;
+            comments.TicketIdentification = ticketID;
+            comments.Show();
+        }
     }
 
 }
