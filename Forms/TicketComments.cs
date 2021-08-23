@@ -15,12 +15,12 @@ namespace TicketTracker.Forms
 {
     public partial class TicketComments : Form
     {
-        public string CurrentUser { get; set; }
-        public int TicketIdentification { get; set; }
+        public string CurrentUser { get; set; } // Retrieving current users name
+        public int TicketIdentification { get; set; } // Retrieving ticketID that corresponds with row
         connection_class con = new connection_class();
         public TicketComments()
         {
-            this.Icon = Properties.Resources.ticket_4271;
+            this.Icon = Properties.Resources.ticket_4271; // Program icon
             InitializeComponent();
         }
 
@@ -28,8 +28,7 @@ namespace TicketTracker.Forms
         {
             Comments userComment = new Comments();
             
-            DateTime date = DateTime.Now;
-            date.ToString("yyyy-MM-dd H:mm:ss");
+            DateTime date = DateTime.Now; // Creating comment date
 
             userComment.Comment = commentBox.Text;
             string comments = userComment.Comment;
@@ -50,7 +49,7 @@ namespace TicketTracker.Forms
         public int CreateComment (string comments, string submitter, string date, int ticketID)
         {
             con.connectdb.Open();
-            string query = "INSERT INTO tickets.comments(Comments, Submitted, Date, TicketID) VALUES (@comments,@submitter,@date,@ticketID)";
+            string query = "INSERT INTO tickets.comments(Comments, Submitted, Date, TicketID) VALUES (@comments,@submitter,@date,@ticketID)"; // Insert query that will save the comment to database
             MySqlCommand com = new MySqlCommand(query, con.connectdb);
             com.Parameters.AddWithValue("@comments", comments);
             com.Parameters.AddWithValue("@submitter", submitter);
@@ -63,7 +62,7 @@ namespace TicketTracker.Forms
         {
             int ticketID = TicketIdentification;
             MySqlDataAdapter adapter = new MySqlDataAdapter();
-            string selectComments = "SELECT Comments, Submitted, Date FROM comments WHERE TicketID='" + ticketID + "';";
+            string selectComments = "SELECT Comments, Submitted, Date FROM comments WHERE TicketID='" + ticketID + "';"; // Select query that will retrieve comments from database and fill commentGridView datagridview
             adapter.SelectCommand = new MySqlCommand(selectComments, con.connectdb);
 
             DataTable table = new DataTable();

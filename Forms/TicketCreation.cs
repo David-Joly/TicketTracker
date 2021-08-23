@@ -15,7 +15,7 @@ namespace TicketTracker.Forms
 {
     public partial class TicketCreation : Form
     {
-        public string CurrentUser { get; set; }
+        public string CurrentUser { get; set; } // Retrieves current users name
         connection_class con = new connection_class();
         public TicketCreation()
         {
@@ -38,7 +38,7 @@ namespace TicketTracker.Forms
             newTicket.Creator = CurrentUser;
             string creator = newTicket.Creator;
 
-            if (issue == "")
+            if (issue == "") // Ensures user is filling all input methods and cannot leave them blank
             {
                 MessageBox.Show("You must enter an issue.");
             }
@@ -59,7 +59,7 @@ namespace TicketTracker.Forms
         public int CreateTicket (string issue, string priority, string status, string creator)
         {
             con.connectdb.Open();
-            string query = "INSERT into tickets.ticks (Issue, Priority, Status, Creator) VALUES (@issue,@priority,@status,@creator)";
+            string query = "INSERT into tickets.ticks (Issue, Priority, Status, Creator) VALUES (@issue,@priority,@status,@creator)"; // Insert query to save the ticket to database
             MySqlCommand com = new MySqlCommand(query, con.connectdb);
             com.Parameters.AddWithValue("@issue", issue);
             com.Parameters.AddWithValue("@priority", priority);

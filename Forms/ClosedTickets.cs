@@ -31,13 +31,13 @@ namespace TicketTracker.Forms
         {
             string status = "Closed";
             closedTicketView.DataSource = null;
-            closedTicketView.Rows.Clear();
+            closedTicketView.Rows.Clear(); // Resets the closed tickets datagridview
             closedTicketView.Update();
             closedTicketView.Refresh();
 
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
-            string selectTickets = "SELECT TicketID, Issue, Priority, Status, Creator FROM ticks WHERE Status='" + status + "';";
+            string selectTickets = "SELECT TicketID, Issue, Priority, Status, Creator FROM ticks WHERE Status='" + status + "';"; // Retrieving tickets marked "Closed" from MySQL 
             adapter.SelectCommand = new MySqlCommand(selectTickets, con.connectdb);
 
             DataTable table = new DataTable();
@@ -49,14 +49,6 @@ namespace TicketTracker.Forms
             closedTicketView.DataSource = bSource;
             this.closedTicketView.AutoGenerateColumns = false;
 
-
-            DataGridViewLinkColumn createComment = new DataGridViewLinkColumn();
-            closedTicketView.Columns.Add(createComment);
-            createComment.HeaderText = "Comments";
-            createComment.Name = "View";
-            createComment.Text = "View";
-            createComment.UseColumnTextForLinkValue = true;
-       
         }
     }
 }

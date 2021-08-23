@@ -37,10 +37,10 @@ namespace TicketTracker.Forms
             // 
             this.closedTicketView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(88)))));
             this.closedTicketView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.closedTicketView.Location = new System.Drawing.Point(102, 56);
+            this.closedTicketView.Location = new System.Drawing.Point(126, 52);
             this.closedTicketView.Name = "closedTicketView";
             this.closedTicketView.RowTemplate.Height = 25;
-            this.closedTicketView.Size = new System.Drawing.Size(600, 218);
+            this.closedTicketView.Size = new System.Drawing.Size(500, 218);
             this.closedTicketView.TabIndex = 0;
             // 
             // ClosedTickets

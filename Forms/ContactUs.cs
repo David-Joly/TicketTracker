@@ -7,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Net.Mail;
+using System.Net.Mail; 
 
 namespace TicketTracker.Forms
 {
     public partial class ContactUs : Form
     {
-        public string CurrentUser { get; set; }
+        public string CurrentUser { get; set; } // Retrieves the current users name
         public ContactUs()
         {
             InitializeComponent();
@@ -25,19 +25,19 @@ namespace TicketTracker.Forms
             {
 
                 MailMessage mail = new MailMessage();
-                SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+                SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com"); // Setting smpt to google
 
-                if (subjectBox.Text == "" || messageBox.Text == "")
+                if (subjectBox.Text == "" || messageBox.Text == "") // Prevents users from sending without entering both a subject and a message
                 {
                     MessageBox.Show("Please fill in the subject box and the message box.");
                 }else
                 {
-                    mail.From = new MailAddress("thetickettrackingemail@gmail.com");
+                    mail.From = new MailAddress("thetickettrackingemail@gmail.com"); // Email that will both send and receive all messages
                     mail.To.Add("thetickettrackingemail@gmail.com");
                     mail.Subject = subjectBox.Text;
-                    mail.Body = "From: " + CurrentUser + "\n" + messageBox.Text;
+                    mail.Body = "From: " + CurrentUser + "\n" + messageBox.Text; // Attaches sending users name to the message
 
-                    SmtpServer.Port = 587;
+                    SmtpServer.Port = 587; // Google port
                     SmtpServer.UseDefaultCredentials = false;
                     SmtpServer.Credentials = new System.Net.NetworkCredential("thetickettrackingemail@gmail.com", "mA2tfnCe2SpWZ6X");
                     SmtpServer.EnableSsl = true;

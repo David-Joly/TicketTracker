@@ -69,9 +69,9 @@ namespace TicketTracker.Forms
             // 
             // messageBox
             // 
-            this.messageBox.Location = new System.Drawing.Point(240, 147);
+            this.messageBox.Location = new System.Drawing.Point(240, 148);
             this.messageBox.Name = "messageBox";
-            this.messageBox.Size = new System.Drawing.Size(240, 160);
+            this.messageBox.Size = new System.Drawing.Size(244, 159);
             this.messageBox.TabIndex = 2;
             this.messageBox.Text = "";
             // 

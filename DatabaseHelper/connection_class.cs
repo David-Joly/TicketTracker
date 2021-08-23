@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 
 namespace TicketTracker.DatabaseHelper
-{
+{   // Connection class which allows the program to connect to MySQL
     class connection_class
     {
         public MySqlConnection connectdb;

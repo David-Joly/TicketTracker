@@ -27,9 +27,9 @@ namespace TicketTracker.Forms
             Application.Exit();
         }
 
-        private void userLoginLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void userLoginLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) // Allows user to navigate to login page when link is clicked
         {
-            UserLogin login = new UserLogin();
+            UserLogin login = new UserLogin(); 
             this.Hide();
             login.Show();
         }

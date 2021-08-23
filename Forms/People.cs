@@ -29,7 +29,7 @@ namespace TicketTracker.Forms
             DataTable table = new DataTable();
             adapter.Fill(table);
 
-            foreach(DataRow row in table.Rows)
+            foreach(DataRow row in table.Rows) // Traverses through the users table and adds name, email, and role rows to the PeopleView listview
             {
                 ListViewItem item = new ListViewItem(row["name"].ToString());
                 item.SubItems.Add(row["role"].ToString());
