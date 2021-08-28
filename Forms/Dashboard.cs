@@ -7,19 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Runtime.InteropServices;
 using TicketTracker.Forms;
 using MySql.Data.MySqlClient;
 using TicketTracker.Classes;
 using TicketTracker.DatabaseHelper;
 
+
 namespace TicketTracker
 {
     public partial class Dashboard : Form
-    {   // Connection class opened
+    {
+        // Connection class 
         connection_class con = new connection_class();
         private Form currentChildForm;
         private Button currentButton;
+
+        private Point mouseLock;
+
+
         public Dashboard(string user)
         {
             this.Icon = Properties.Resources.ticket_4271; // Adding icon to application
@@ -100,8 +105,8 @@ namespace TicketTracker
         //Refreshes the dashboard if dashboard button is clicked
         private void dashboardButton_Click(object sender, EventArgs e)
         {
-            SelectedButton(sender, Colours.clickedColour); 
-            if (currentChildForm != null) 
+            SelectedButton(sender, Colours.clickedColour);
+            if (currentChildForm != null)
             {
                 currentChildForm.Close();
                 Refreshing();
@@ -115,8 +120,8 @@ namespace TicketTracker
         // Opens People.cs child form
         private void usersButton_Click(object sender, EventArgs e)
         {
-            SelectedButton(sender, Colours.clickedColour); 
-            OpenChildForm(new People()); 
+            SelectedButton(sender, Colours.clickedColour);
+            OpenChildForm(new People());
         }
 
         private void ResetButton()
@@ -208,7 +213,7 @@ namespace TicketTracker
         // Opens each individual tickets comments section when the view link is clicked inside the datagridview
         private void ticketGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            string user = userLabel.Text; 
+            string user = userLabel.Text;
             int ticketID = Convert.ToInt32(ticketGridView.CurrentRow.Cells[0].Value);
 
             TicketComments commentPage = new TicketComments();
@@ -219,7 +224,7 @@ namespace TicketTracker
         }
         public void UserStats()
         {
-            
+
             string openCount;
             string closedCount;
             string commentCount;
@@ -272,11 +277,24 @@ namespace TicketTracker
         {
             this.WindowState = FormWindowState.Minimized; // Minimizes the window on click
         }
+
+        private void desktopPanel_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseLock = e.Location;
+        }
+
+        private void desktopPanel_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left) // If left button is held user will be able to drag form around
+            {
+                int dx = e.Location.X - mouseLock.X;
+                int dy = e.Location.Y - mouseLock.Y;
+                this.Location = new Point(this.Location.X + dx, this.Location.Y + dy);
+            }
+        }
     }
 }
 
-       
-  
 
 
 

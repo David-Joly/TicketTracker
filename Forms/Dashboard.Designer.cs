@@ -40,6 +40,7 @@ namespace TicketTracker
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.borderPanel = new System.Windows.Forms.Panel();
             this.desktopPanel = new System.Windows.Forms.Panel();
+            this.minimizeButton = new System.Windows.Forms.Button();
             this.userLabel = new System.Windows.Forms.Label();
             this.welcomeLabel = new System.Windows.Forms.Label();
             this.statsLabel = new System.Windows.Forms.Label();
@@ -50,7 +51,6 @@ namespace TicketTracker
             this.monthCalendar = new System.Windows.Forms.MonthCalendar();
             this.ticketGridView = new System.Windows.Forms.DataGridView();
             this.exitButton = new System.Windows.Forms.Button();
-            this.minimizeButton = new System.Windows.Forms.Button();
             this.dashPanel.SuspendLayout();
             this.topDashPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -225,6 +225,22 @@ namespace TicketTracker
             this.desktopPanel.Name = "desktopPanel";
             this.desktopPanel.Size = new System.Drawing.Size(840, 560);
             this.desktopPanel.TabIndex = 2;
+            this.desktopPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.desktopPanel_MouseDown);
+            this.desktopPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.desktopPanel_MouseMove);
+            // 
+            // minimizeButton
+            // 
+            this.minimizeButton.FlatAppearance.BorderSize = 0;
+            this.minimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.minimizeButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.minimizeButton.ForeColor = System.Drawing.Color.White;
+            this.minimizeButton.Image = global::TicketTracker.Properties.Resources.remove1;
+            this.minimizeButton.Location = new System.Drawing.Point(756, 9);
+            this.minimizeButton.Name = "minimizeButton";
+            this.minimizeButton.Size = new System.Drawing.Size(32, 26);
+            this.minimizeButton.TabIndex = 1;
+            this.minimizeButton.UseVisualStyleBackColor = true;
+            this.minimizeButton.Click += new System.EventHandler(this.minimizeButton_Click);
             // 
             // userLabel
             // 
@@ -331,20 +347,6 @@ namespace TicketTracker
             this.exitButton.Text = "X";
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
-            // 
-            // minimizeButton
-            // 
-            this.minimizeButton.FlatAppearance.BorderSize = 0;
-            this.minimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.minimizeButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.minimizeButton.ForeColor = System.Drawing.Color.White;
-            this.minimizeButton.Image = global::TicketTracker.Properties.Resources.remove1;
-            this.minimizeButton.Location = new System.Drawing.Point(756, 9);
-            this.minimizeButton.Name = "minimizeButton";
-            this.minimizeButton.Size = new System.Drawing.Size(32, 26);
-            this.minimizeButton.TabIndex = 1;
-            this.minimizeButton.UseVisualStyleBackColor = true;
-            this.minimizeButton.Click += new System.EventHandler(this.minimizeButton_Click);
             // 
             // Dashboard
             // 
